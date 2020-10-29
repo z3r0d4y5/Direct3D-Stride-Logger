@@ -197,7 +197,7 @@ DWORD WINAPI MainThread(LPVOID param)
 	getD3DDevice();
 
 	oEndScene = (f_EndScene)DetourFunction((PBYTE)getVF((DWORD)pD3DDevice, 42), (PBYTE)Hooked_EndScene);
-	oReset = (f_Reset)DetourFunction((PBYTE)getVF((DWORD)pD3DDevice, 16), (PBYTE)Hooked_EndScene);
+	oReset = (f_Reset)DetourFunction((PBYTE)getVF((DWORD)pD3DDevice, 16), (PBYTE)Hooked_Reset);
 	oDrawIndexedPrimitive = (f_DrawIndexedPrimitive)DetourFunction((PBYTE)getVF((DWORD)pD3DDevice, 82), (PBYTE)Hooked_DrawIndexedPrimitive);
 
 	if (AllocConsole())
